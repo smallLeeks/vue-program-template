@@ -1,0 +1,15 @@
+{
+    "recommendations": [
+        "antfu.vite",
+        "antfu.unocss",
+        "csstools.postcss",
+        "dbaeumer.vscode-eslint",
+        "Vue.volar",
+        "lokalise.i18n-ally",
+        "streetsidesoftware.code-spell-checker",
+        "usernamehw.errorlens",
+        "stylelint.vscode-stylelint",
+        "Vue.vscode-typescript-vue-plugin",
+        "statelyai.stately-vscode"
+    ]
+}
