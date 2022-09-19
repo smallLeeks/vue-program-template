@@ -48,3 +48,24 @@
 
 ## 状态管理
 [pinia](https://pinia.vuejs.org/)
+
+## 目录
+``` tree
+src
+├─ assets
+│  ├─ base.css
+│  ├─ logo.svg
+│  └─ main.css
+├─ components
+│  └─ Other.tsx
+├─ router
+│  └─ index.ts
+├─ stores
+│  └─ counter.ts
+├─ views
+│  ├─ AboutView.vue
+│  └─ HomeView.vue
+├─ App.vue
+├─ auto-import.d.ts
+└─ main.ts
+```
