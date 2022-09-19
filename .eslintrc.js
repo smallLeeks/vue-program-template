@@ -38,7 +38,6 @@ module.exports = {
         defineExpose: 'readonly',
         withDefaults: 'readonly',
     },
-    parser: 'vue-eslint-parser',
     // 这里时配置规则的,自己看情况配置
     rules: {
         semi: ['warn', 'never'], // 禁止尾部使用分号
