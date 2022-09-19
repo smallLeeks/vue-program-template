@@ -3,4 +3,4 @@
 
 npm run lint
 npm run lint:pretty
-npm run lint:lint-staged
+npm run lint:staged
