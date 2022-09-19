@@ -19,7 +19,7 @@ export default defineConfig(({ command, mode }) => {
             vue({
                 template: {
                     compilerOptions: {
-                        isCustomElement: (tag) => tag.startsWith('qys-'),
+                        isCustomElement: tag => tag.startsWith('qys-'),
                     },
                 },
             }),
@@ -92,7 +92,7 @@ export default defineConfig(({ command, mode }) => {
                 '/api': {
                     target: '',
                     changeOrigin: true,
-                    rewrite: (path) => path.replace(/^\/api/, ''),
+                    rewrite: path => path.replace(/^\/api/, ''),
                 },
             },
         },
