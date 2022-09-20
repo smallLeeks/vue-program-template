@@ -3,7 +3,6 @@
 <template>
     <div>
         <RouterLink to="/">Home</RouterLink>
-        <a-divider type="vertical" />
         <RouterLink to="/about">About</RouterLink>
     </div>
     <RouterView />
