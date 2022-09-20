@@ -70,10 +70,8 @@ src
 └─ main.ts
 ```
 
-## TODO SSR实现
-(文档)[https://cn.vitejs.dev/guide/ssr.html]
-(demo)[https://github.com/vitejs/vite/tree/main/playground/ssr-vue]
-
-## TODO 暂未解决问题
+## TODO
++ ssr
+    + (文档)[https://cn.vitejs.dev/guide/ssr.html]
+    + (demo)[https://github.com/vitejs/vite/tree/main/playground/ssr-vue]
 1. `vue-template` pretty失效
-2. `@ant-design/icons-vue` 全局自动导入
