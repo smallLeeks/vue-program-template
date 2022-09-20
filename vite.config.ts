@@ -71,10 +71,6 @@ export default defineConfig(({ command, mode }) => {
                         from: 'vue-router',
                         names: ['RouterLink', 'RouterView'],
                     },
-                    {
-                        from: '@ant-design/icons-vue/es',
-                        names: ['SettingFilled'],
-                    },
                 ],
             }),
         ],
