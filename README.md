@@ -49,6 +49,9 @@
 ## 状态管理
 [pinia](https://pinia.vuejs.org/)
 
+## VueTypes
+[文档](https://dwightjack.github.io/vue-types/guide/validators.html#native-validators)
+
 ## 目录
 ``` tree
 src

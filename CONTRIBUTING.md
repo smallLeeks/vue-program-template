@@ -24,3 +24,5 @@ clone代码并且pnpm install 安装完依赖后，可以依次运行下面几�
     + 注释.husky下pre-commit
 
 查看[链接](./commitlint.config.js)中rules
+
+## BEM命名规范[查看链接](https://bemcss.com/)
