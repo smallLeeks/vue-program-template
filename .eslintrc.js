@@ -64,6 +64,7 @@ module.exports = {
         'no-trailing-spaces': 'warn', // 禁止一行结束后面不要有空格
         'no-useless-call': 'warn', // 禁止不必要的.call()和.apply()
         'no-var': 'warn', // 禁止出现var用let和const代替
+        'no-unused-vars': 0, // 禁止未使用过的变量
         'no-delete-var': 'off', // 允许出现delete变量的使用
         'no-shadow': 'off', // 允许变量声明与外层作用域的变量同名
         'dot-notation': 'warn', // 要求尽可能地使用点号
