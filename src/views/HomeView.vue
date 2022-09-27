@@ -3,7 +3,7 @@
         <div qys-font="bold" qys-text="brand" class="border border-error">attribute mode</div>
         <qys-text-waring>css to html</qys-text-waring>
     </div>
-    <Other />
+    <VModal />
 </template>
 
 <script lang="ts" setup></script>
