@@ -3,7 +3,8 @@
 <template>
     <div>
         <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <br />
+        <Rou ter-link to="/about">About</Rou>
     </div>
     <RouterView />
 </template>
