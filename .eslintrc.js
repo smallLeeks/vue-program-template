@@ -42,7 +42,7 @@ module.exports = {
     // 这里时配置规则的,自己看情况配置
     rules: {
         semi: ['warn', 'never'], // 禁止尾部使用分号
-        'no-console': 'warn', // 禁止出现console
+        'no-console': 0, // 禁止出现console
         'no-debugger': 'warn', // 禁止出现debugger
         'no-duplicate-case': 'warn', // 禁止出现重复case
         'no-empty': 'warn', // 禁止出现空语句块
