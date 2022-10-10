@@ -26,3 +26,11 @@ clone代码并且pnpm install 安装完依赖后，可以依次运行下面几�
 查看[链接](./commitlint.config.js)中rules
 
 ## BEM命名规范[查看链接](https://bemcss.com/)
+
+## TODO
++ ssr
+    + (文档)[https://cn.vitejs.dev/guide/ssr.html]
+    + (demo)[https://github.com/vitejs/vite/tree/main/playground/ssr-vue]
+1. `vue-template` pretty失效
+
+2. `unplugin-vue-components/vite` 自定义组件的声明文件的处理

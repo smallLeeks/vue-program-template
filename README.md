@@ -94,6 +94,7 @@ vue-program-template
     - husky 相关包
         - husky
         ```
+        npx husky install
         package.json => scripts => `"prepare": "husky install"`
         ```
         - int-staged
@@ -132,7 +133,11 @@ vue-program-template
 
 ## 检查类型和生成类型声明文件
 [链接](https://cn.vuejs.org/guide/typescript/overview.html#ide-support)
+[npm地址](https://www.npmjs.com/package/vue-tsc)
 ```vue-tsc
+1. type-check: vue-tsc --noEmit
+
+2. build dts: vue-tsc --declaration --emitDeclarationOnly
 
 ```
 
@@ -147,16 +152,8 @@ vue-program-template
 ## 状态管理
 [pinia](https://pinia.vuejs.org/)
 
-## VueTypes
-[文档](https://dwightjack.github.io/vue-types/guide/validators.html#native-validators)
-
 ## headless ui
 [无ui组件库](https://headlessui.com/)
 
-## TODO
-+ ssr
-    + (文档)[https://cn.vitejs.dev/guide/ssr.html]
-    + (demo)[https://github.com/vitejs/vite/tree/main/playground/ssr-vue]
-1. `vue-template` pretty失效
-
-2. `unplugin-vue-components/vite` 自定义组件的声明文件的处理
+## vue-types
+[文档](https://dwightjack.github.io/vue-types/guide/validators.html#native-validators)
