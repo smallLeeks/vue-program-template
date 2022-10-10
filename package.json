@@ -2,7 +2,8 @@
     "name": "vue-program-template",
     "version": "0.0.0",
     "scripts": {
-        "dev": "vite",
+        "dev": "run-s start",
+        "start": "vite",
         "build": "run-p type-check build-only",
         "preview": "vite preview --port 4173",
         "build-only": "vite build",
@@ -10,7 +11,8 @@
         "lint": "eslint --cache --max-warnings 0 \"src/**/*.{vue,ts,tsx,js,jsx}\" --fix",
         "lint:staged": "lint-staged -c ./.husky/lintstagedrc.js",
         "lint:pretty": "prettier --write \"./**/*.{html,vue,ts,js,json,md}\"",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "dts": "vue-tsc --declaration --emitDeclarationOnly"
     },
     "dependencies": {
         "@headlessui/vue": "^1.7.2",
