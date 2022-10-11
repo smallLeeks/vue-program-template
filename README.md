@@ -4,12 +4,12 @@
     + `nodeJS > 14`
     + `prettier`
 
-## [vite插件](https://juejin.cn/post/6998059092497399845)
+## [vite常用插件](https://juejin.cn/post/6998059092497399845)
 
 ## 工程目录
-参考目录
-[链接](https://github.com/alan2207/bulletproof-react)
-[链接](https://github.com/antfu)
+
+[react项目示例](https://github.com/alan2207/bulletproof-react)
+[antfu 暂时忘记哪个项目了](https://github.com/antfu)
 
 ``` tree
 vue-program-template
@@ -65,20 +65,20 @@ vue-program-template
 ## 工程搭建
 
 - 参考文章：
-[链接](https://cn.vuejs.org/guide/quick-start.html#creating-a-vue-application)
-[链接](https://segmentfault.com/a/1190000041954694)
-[链接](https://juejin.cn/post/6951649464637636622#heading-15)
-[链接](https://juejin.cn/post/7091667988163592222)
+[参考链接1](https://cn.vuejs.org/guide/quick-start.html#creating-a-vue-application)
+[参考链接2](https://segmentfault.com/a/1190000041954694)
+[参考链接3](https://juejin.cn/post/6951649464637636622#heading-15)
+[参考链接4](https://juejin.cn/post/7091667988163592222)
 
-- eslint + prettier + husky
-    - eslint 解析包
+- `eslint + prettier + husky`
+    - `eslint` 解析包
         - @babel/core
         - @typescript-eslint/parser
         ```
         使用自定义解析器，必须使用parserOptions.parser选项。注：tsx下ts断言报错`unexpected token, expected ','`
         ```
 
-    - eslint 相关包
+    - `eslint` 相关包
         - eslint
         - eslint-plugin-vue
         - vite-plugin-eslint
@@ -86,12 +86,12 @@ vue-program-template
         配置项：['src/**/*.js', 'src/**/*.ts', 'src/**/*.vue', 'src/*.js', 'src/*.ts', 'src/*.vue']
         ```
 
-    - prettier 相关包
+    - `prettier` 相关包
         - prettier
         - eslint-config-prettier
         - eslint-plugin-prettier
 
-    - husky 相关包
+    - `husky` 相关包
         - husky
         ```
         npx husky install
@@ -104,13 +104,25 @@ vue-program-template
         ```
         - @commitlint/config-conventional
 
+- `jest` 单元测试
+    - `jest` 单元测试能力
+    - `ts-jest` ts 开发语言的预处理器
+    - `@vue/test-utils` 测试 Vue 组件
+    - `@vue/vue-jest` Vue SFC (单文件组件) 转换为 jest 可执行的 js 代码
+    - `babel-jest` 非标准的 js 代码 (JSX/TSX) 转换为 Jest 可执行的 js 代码
+    - `@babel/preset-env` 提供测试时最新的 js 语法的 Babel Preset
+    - `@bebel/preset-typescript` 提供测试时 ts 语法的 Babel Preset
+    - `@vue/babel-plugin-jsx` 提供测试再 Vue 中使用 JSX/TSX 语法的B abel plugin
+    - `@vitejs/plugin-vue-jsx` 提供开发时在 Vue 中使用 JSX/TSX 语法的 Vite Plugin
+    - `jest-transform-stub` 非 js 文件转换为 Jest 可执行的 js 代码
+
 ## unocss
 
 1. 配置文件
 - unocss.config.ts
 
 2. 相关资料
-- [github](https://github.com/unocss/unocss)
+- [github地址](https://github.com/unocss/unocss)
 
 - [交互文档](https://uno.antfu.me/)
 
@@ -144,16 +156,16 @@ vue-program-template
 ## unplugin-auto-import
 自动导入composition api
 
-## xState
-+ [文档](https://xstate.js.org/docs)
+## 状态机
++ [xState文档](https://xstate.js.org/docs)
 
 + [为什么使用]()
 
 ## 状态管理
-[pinia](https://pinia.vuejs.org/)
+[pinia文档](https://pinia.vuejs.org/)
 
-## headless ui
-[无ui组件库](https://headlessui.com/)
+## 无ui组件库
+[headless ui 文档](https://headlessui.com/)
 
-## vue-types
-[文档](https://dwightjack.github.io/vue-types/guide/validators.html#native-validators)
+## ts类型推断
+[vue-types 文档](https://dwightjack.github.io/vue-types/guide/validators.html#native-validators)
