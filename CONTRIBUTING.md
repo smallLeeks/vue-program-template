@@ -18,8 +18,6 @@
 
 ## [提交规范](./commitlint.config.js)
 
-虽然`lint-staged`每次会对src下所有文件执行lint，导致等待时间过长，但是不建议关闭此husky
-
 - 关闭`husky`
     - 注释`.husky`下`pre-commit`
 
