@@ -1,7 +1,7 @@
 # vue-program-template
 
 + 全局安装以下库
-    + `nodeJS > 14`
+    + `node >= 14.18.0` vite3 运行所需node版本
     + `prettier`
 
 ## [vite常用插件](https://juejin.cn/post/6998059092497399845)
@@ -115,6 +115,8 @@ vue-program-template
     - `@vue/babel-plugin-jsx` 提供测试再 Vue 中使用 JSX/TSX 语法的B abel plugin
     - `@vitejs/plugin-vue-jsx` 提供开发时在 Vue 中使用 JSX/TSX 语法的 Vite Plugin
     - `jest-transform-stub` 非 js 文件转换为 Jest 可执行的 js 代码
+    - `@types/jest`
+    - `@vue/cli-plugin-unit-jest`
 
 ## unocss
 
@@ -169,3 +171,6 @@ vue-program-template
 
 ## ts类型推断
 [vue-types 文档](https://dwightjack.github.io/vue-types/guide/validators.html#native-validators)
+
+## 微前端 UMD 打包构建
+[参考链接](https://juejin.cn/post/7101480400198828068)
