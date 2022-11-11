@@ -31,7 +31,6 @@ coverage
 
 
 .eslintcache
-.eslintrc-auto-import.json
 
 package-lock.json
 yarn-lock.json
