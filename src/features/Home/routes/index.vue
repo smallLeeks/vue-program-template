@@ -11,7 +11,7 @@
                 qys-focus-visible="ring-2 ring-white ring-opacity-75"
                 @click="handleOpenModal"
             >
-                headless ui
+                弹窗
             </button>
         </div>
     </VModal>
