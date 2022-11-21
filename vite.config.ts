@@ -1,7 +1,10 @@
 import { fileURLToPath, URL } from 'node:url'
+import * as path from 'path'
 
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+// electron
+import electron from 'vite-plugin-electron'
 /** JSX & TSX support with HMR */
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -21,6 +24,14 @@ export default defineConfig(({ command, mode }) => {
                     compilerOptions: {
                         isCustomElement: tag => tag.startsWith('qys-'),
                     },
+                },
+            }),
+            electron({
+                main: {
+                    entry: 'electron/main/index.ts', // 主进程文件
+                },
+                preload: {
+                    input: path.join(__dirname, './electron-preload/index.ts'), // 预加载文件
                 },
             }),
             vueJsx(),
@@ -83,7 +94,7 @@ export default defineConfig(({ command, mode }) => {
         server: {
             host: '0.0.0.0',
             strictPort: true,
-            open: true,
+            open: false,
             proxy: {
                 '/api': {
                     target: '',
@@ -91,6 +102,9 @@ export default defineConfig(({ command, mode }) => {
                     rewrite: path => path.replace(/^\/api/, ''),
                 },
             },
+        },
+        build: {
+            emptyOutDir: false,
         },
     }
 })
