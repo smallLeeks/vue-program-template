@@ -23,6 +23,8 @@ const createWindow = () => {
     }
 }
 
+process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = 'true'
+
 app.whenReady().then(() => {
     createWindow() // 创建窗口
     app.on('activate', () => {
