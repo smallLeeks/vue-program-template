@@ -6,6 +6,7 @@ const createWindow = () => {
         width: 800,
         height: 600,
         webPreferences: {
+            webSecurity: false, // 允许跨域
             contextIsolation: true, // 是否开启隔离上下文
             nodeIntegration: true, // 渲染进程使用Node API
             preload: path.join(__dirname, '../preload/index.js'), // 需要引用js文件
@@ -24,6 +25,8 @@ const createWindow = () => {
 }
 
 process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = 'true'
+
+app.commandLine.appendSwitch('disable-web-security') // 开启跨域
 
 app.whenReady().then(() => {
     createWindow() // 创建窗口
