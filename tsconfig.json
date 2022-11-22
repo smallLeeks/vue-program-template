@@ -2,6 +2,7 @@
     "extends": "@vue/tsconfig/tsconfig.web.json",
     "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
     "module": "esnext",
+    "moduleResolution": "NodeNext",
     "target": "esnext",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -12,10 +13,9 @@
             "@/*": ["./src/*"]
         }
     },
-
     "references": [
         {
             "path": "./tsconfig.config.json"
         }
-    ]
+    ],
 }

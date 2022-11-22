@@ -27,11 +27,13 @@ export default defineConfig(({ command, mode }) => {
                 },
             }),
             electron({
-                main: {
-                    entry: 'electron/main/index.ts', // 主进程文件
-                },
-                preload: {
-                    input: path.join(__dirname, './electron-preload/index.ts'), // 预加载文件
+                entry: 'electron/main/index.js', // 主进程文件
+                vite: {
+                    build: {
+                        rollupOptions: {
+                            external: ['serialport', 'sqlite3'],
+                        },
+                    },
                 },
             }),
             vueJsx(),

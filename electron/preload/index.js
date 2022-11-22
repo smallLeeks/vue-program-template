@@ -1,2 +1,6 @@
-import os from 'os'
-console.log('platform', os.platform())
+const os = require('os')
+const { contextBridge } = require('electron')
+
+contextBridge.exposeInMainWorld('electronAPI', {
+    platform: os.platform(),
+})
