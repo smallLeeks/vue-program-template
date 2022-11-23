@@ -54,50 +54,5 @@
         "vite-plugin-eslint": "^1.8.1",
         "vue-tsc": "^0.39.5",
         "vue-types": "^4.2.1"
-    },
-    "build": {
-        "productName": "electron-node-proxy",
-        "appId": "com.electron-node-proxy.desktop",
-        "asar": true,
-        "copyright": "Copyright © 2022 smallpig",
-        "directories": {
-            "output": "release/${version}"
-        },
-        "files": [
-            "dist/**/*",
-            "electron"
-        ],
-        "mac": {
-            "artifactName": "${productName}_${version}.${ext}",
-            "target": [
-                "dmg"
-            ]
-        },
-        "win": {
-            "target": [
-                {
-                    "target": "nsis",
-                    "arch": [
-                        "x64"
-                    ]
-                }
-            ],
-            "artifactName": "${productName}_${version}.${ext}"
-        },
-        "nsis": {
-            "oneClick": false,
-            "perMachine": false,
-            "allowToChangeInstallationDirectory": true,
-            "deleteAppDataOnUninstall": false
-        },
-        "publish": [
-            {
-                "provider": "generic",
-                "url": "http:/localhost:5173"
-            }
-        ],
-        "releaseInfo": {
-            "releaseNotes": "版本更新的具体内容"
-        }
     }
 }

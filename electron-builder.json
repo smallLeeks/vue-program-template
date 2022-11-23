@@ -1,0 +1,53 @@
+{
+    "productName": "electron-node-proxy",
+    "appId": "com.electron-node-proxy.desktop",
+    "asar": true,
+    "copyright": "Copyright © 2022 electron-node-proxy",
+    "directories": {
+        "output": "release/${version}"
+    },
+    "files": [
+        "dist/**/*",
+        "electron"
+    ],
+    "mac": {
+        "artifactName": "${productName}_${version}.${ext}",
+        "target": [
+            "dmg"
+        ]
+    },
+    "win": {
+        "icon": "./public/favicon.ico", // 图标
+        "target": [
+            {
+                "target": "nsis",
+                "arch": [
+                    "x64"
+                ]
+            }
+        ],
+        "artifactName": "${productName}_${version}.${ext}"
+    },
+    "nsis": {
+        "oneClick": false, // 是否一键安装
+        "perMachine": false,
+        "allowElevation": true, // 允许请求提升。 如果为false，则用户必须使用提升的权限重新启动安装程序
+        "allowToChangeInstallationDirectory": true, // 允许修改安装目录
+        // "installerIcon": "./favicon.ico", // 安装图标
+        // "uninstallerIcon": "./favicon.ico", // 卸载图标
+        // "installerHeaderIcon": "./favicon.ico", // 安装时头部图标
+        "deleteAppDataOnUninstall": false,
+        "createDesktopShortcut": true, // 创建桌面图标
+        "createStartMenuShortcut": true, // 创建开始菜单图标
+        "shortcutName": "leDom", // 图标名称(项目名称)
+    },
+    "publish": [
+        {
+            "provider": "generic",
+            "url": "http:/localhost:5173"
+        }
+    ],
+    "releaseInfo": {
+        "releaseNotes": "版本更新的具体内容"
+    }
+}
