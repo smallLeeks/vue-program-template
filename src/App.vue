@@ -1,12 +1,15 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { Login } from './layout'
+</script>
 
 <template>
-    <div>
+    <Login />
+    <!-- <div>
         <RouterLink to="/">Home</RouterLink>
         <br />
         <RouterLink to="/about">About</RouterLink>
     </div>
-    <RouterView />
+    <RouterView /> -->
 </template>
 
 <style scoped></style>

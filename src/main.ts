@@ -3,6 +3,7 @@ import { createPinia } from 'pinia'
 
 import App from './App.vue'
 import router from './router'
+import ElementPlus from 'element-plus'
 
 import './assets/main.css'
 import 'uno.css'
@@ -16,5 +17,7 @@ app.config.errorHandler = (err, vm, info) => {
 
 app.use(createPinia())
 app.use(router)
+
+app.use(ElementPlus, { size: 'default', zIndex: 3000 })
 
 app.mount('#app')

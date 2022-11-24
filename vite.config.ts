@@ -1,5 +1,4 @@
 import { fileURLToPath, URL } from 'node:url'
-import * as path from 'path'
 
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
@@ -12,7 +11,7 @@ import Unocss from 'unocss/vite'
 import eslintPlugin from 'vite-plugin-eslint'
 /** antD按需加载 */
 import Components from 'unplugin-vue-components/vite'
-import { HeadlessUiResolver } from 'unplugin-vue-components/resolvers'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
@@ -59,6 +58,7 @@ export default defineConfig(({ command, mode }) => {
                         ],
                     },
                 ],
+                resolvers: [ElementPlusResolver()],
                 dts: './src/auto-import.d.ts',
                 eslintrc: {
                     enabled: false,
@@ -76,7 +76,7 @@ export default defineConfig(({ command, mode }) => {
                 cache: false,
             }),
             Components({
-                resolvers: [HeadlessUiResolver()],
+                resolvers: [ElementPlusResolver()],
                 dirs: 'src/components',
                 extensions: ['vue', 'tsx', 'jsx'],
                 dts: true,
@@ -107,6 +107,20 @@ export default defineConfig(({ command, mode }) => {
         },
         build: {
             emptyOutDir: false,
+            //静态资源分类打包
+            rollupOptions: {
+                output: {
+                    chunkFileNames: 'static/js/[name]-[hash].js',
+                    entryFileNames: 'static/js/[name]-[hash].js',
+                    assetFileNames: 'static/[ext]/[name]-[hash].[ext]',
+                },
+                manualChunks(id) {
+                    //静态资源分拆打包
+                    if (id.includes('node_modules')) {
+                        return id.toString().split('node_modules/')[1].split('/')[0].toString()
+                    }
+                },
+            },
         },
     }
 })
