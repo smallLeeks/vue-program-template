@@ -10,6 +10,4 @@ app.listen(8888, () => {
     console.log('web server running at http://localhost:8888/index.html')
 })
 
-console.log(111111, path.join(__dirname, '../../dist'))
-
 app.use(express.static(path.join(__dirname, '../../dist')))

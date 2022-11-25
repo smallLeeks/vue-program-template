@@ -7,11 +7,18 @@ const router = express.Router()
 
 router.get('/', (req, res, next) => {
     const URL = url.parse(zkConfig.qiyuesuo.crmapi)
+    console.log(2222, req.headers, URL)
     const options = {
         hostname: URL.hostname,
-        path: ``, // 路径
+        path:
+            URL.href +
+            req.baseUrl.substring(4) +
+            '?' +
+            Object.keys(req.query)
+                .map(x => x + '=' + req.query[x])
+                .join('&'),
         method: 'GET',
-        headers: {}, // 头部信息
+        headers: req.headers,
     }
     const request = http.request(options, response => {
         let result = ''
