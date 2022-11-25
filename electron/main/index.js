@@ -1,6 +1,10 @@
 const path = require('path')
 const { app, BrowserWindow } = require('electron')
 
+const childProcess = require('child_process')
+const exec = childProcess.exec
+let openExec
+
 const createWindow = () => {
     const mainWindow = new BrowserWindow({
         width: 800,
@@ -22,6 +26,18 @@ const createWindow = () => {
         // 开发者调试
         mainWindow.webContents.openDevTools({ mode: 'right' })
     }
+
+    // 创建node web server子进程
+    openExec = exec('node ./electron/server/index.js', (error, stdout, stderr) => {
+        if (error) {
+            console.log(error.stack)
+            console.log('Error code: ' + error.code)
+            return
+        }
+        console.log('使用exec方法输出: ' + stdout)
+        console.log(`stderr: ${stderr}`)
+        console.log(process.pid)
+    })
 }
 
 process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = 'true'
@@ -35,9 +51,23 @@ app.whenReady().then(() => {
     })
 })
 
-// 关闭窗口
+// 当全部窗口关闭时退出时，杀死node进程
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
-        app.quit()
+        app.exit()
+        // 判断openExec是否存在，存在就杀掉node进程
+        if (!openExec) {
+            // console.log('openExec is null')
+        } else {
+            exec('taskkill /f /t /im node.exe', (error, stdout, stderr) => {
+                if (error) {
+                    console.log(error.stack)
+                    console.log('Error code: ' + error.code)
+                    return
+                }
+                console.log('使用exec方法输出: ' + stdout)
+                console.log(`stderr: ${stderr}`)
+            })
+        }
     }
 })
