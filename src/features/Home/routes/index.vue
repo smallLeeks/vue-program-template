@@ -16,7 +16,7 @@
         </div>
     </VModal>
     <button @click="handlePinia">pinia {{ counter }}</button>
-    <button @click="handleRequest">请求数据</button>
+    <button @click="handleRequest">http请求数据</button>
 </template>
 
 <script lang="ts" setup>
