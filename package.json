@@ -18,6 +18,7 @@
         "@headlessui/vue": "^1.7.2",
         "@vueuse/core": "^9.1.1",
         "@xstate/vue": "^2.0.0",
+        "axios": "^1.2.0",
         "pinia": "^2.0.17",
         "vue": "^3.2.37",
         "vue-router": "^4.1.3",

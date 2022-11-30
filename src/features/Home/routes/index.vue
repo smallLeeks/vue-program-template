@@ -16,10 +16,13 @@
         </div>
     </VModal>
     <button @click="handlePinia">pinia {{ counter }}</button>
+    <button @click="handleRequest">请求数据</button>
 </template>
 
 <script lang="ts" setup>
 import { useCounterStore } from '@/stores/index'
+import { inject } from 'vue'
+const _http: any = inject('$axios')
 
 const store = useCounterStore()
 
@@ -36,6 +39,17 @@ const handleOpenModal = () => {
 }
 const handleCloseModal = () => {
     isOpen.value = false
+}
+
+const handleRequest = () => {
+    _http
+        .get('/api/data/cms-config.json')
+        .then((res: any) => {
+            console.log(res)
+        })
+        .catch((err: any) => {
+            console.log(err)
+        })
 }
 </script>
 
