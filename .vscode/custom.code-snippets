@@ -19,7 +19,7 @@
         "prefix": "vue3ts",
         "body": [
             "<template>",
-            "    <view class=\"\">$0</view>",
+            "    <div class=\"\">$0</div>",
             "</template>",
             "",
             "<script lang=\"ts\" setup>",
