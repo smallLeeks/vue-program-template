@@ -26,6 +26,8 @@ import type { FormInstance } from 'element-plus'
 
 const ruleFormRef = ref<FormInstance>()
 
+const route = useRouter()
+
 const validateUserName = (rule: any, value: any, callback: any) => {
     if (!value) {
         return callback(new Error('请输入用户名'))
@@ -57,6 +59,7 @@ const submitForm = (formEl: FormInstance | undefined) => {
     formEl.validate(valid => {
         if (valid) {
             console.log('登录成功!')
+            route.replace('/home')
         } else {
             console.log('登录失败!')
             return false
