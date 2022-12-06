@@ -1,6 +1,9 @@
 import { fileURLToPath, URL } from 'node:url'
 
 import { defineConfig } from 'vite'
+
+import * as path from 'path'
+
 import vue from '@vitejs/plugin-vue'
 /** JSX & TSX support with HMR */
 import vueJsx from '@vitejs/plugin-vue-jsx'
@@ -10,6 +13,8 @@ import eslintPlugin from 'vite-plugin-eslint'
 /** antD按需加载 */
 import Components from 'unplugin-vue-components/vite'
 import { HeadlessUiResolver } from 'unplugin-vue-components/resolvers'
+
+import { OUTPUT_DIR } from './build/constant'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
@@ -82,6 +87,7 @@ export default defineConfig(({ command, mode }) => {
         },
         server: {
             host: '0.0.0.0',
+            port: 4001,
             strictPort: true,
             open: true,
             proxy: {
@@ -91,6 +97,31 @@ export default defineConfig(({ command, mode }) => {
                     rewrite: path => path.replace(/^\/api/, ''),
                 },
             },
+        },
+        define: {
+            'process.env': {},
+        },
+        build: {
+            target: 'es2015',
+            lib: {
+                name: 'app1',
+                entry: path.resolve(__dirname, './src/main.ts'),
+                formats: ['umd'],
+                fileName: 'child-app1',
+            },
+            minify: 'terser', // 混淆器，terser构建后文件体积更小
+            outDir: OUTPUT_DIR, // 指定输出路径
+            terserOptions: {
+                compress: {
+                    keep_infinity: true,
+                },
+            },
+            rollupOptions: {
+                input: 'index.html',
+                format: 'system',
+                preserveEntrySignatures: true,
+            },
+            chunkSizeWarningLimit: 2000,
         },
     }
 })

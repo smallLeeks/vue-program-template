@@ -1,5 +1,5 @@
 import { createApp, h } from 'vue'
-import { registerApplication, start } from 'single-spa'
+import singleSpaVue from 'single-spa-vue'
 import { createPinia } from 'pinia'
 
 import App from './App.vue'
@@ -7,61 +7,44 @@ import router from './router'
 
 import './assets/main.css'
 import 'uno.css'
+import { isWindow } from '@vueuse/core'
 
-/**
- * 子应用脚本
- *
- * @param { string } url 子应用脚本文件地址
- * @returns Promise
- */
-function runScript(url) {
-    return new Promise((resolve, reject) => {
-        const script = document.createElement('script')
-        script.src = url
-        script.onload = resolve
-        script.onerror = reject
-        const firstScript = document.getElementsByTagName('script')[0]
-        firstScript.parentElement.insertBefore(script, firstScript)
-    })
-}
-
-/**
- * 加载子应用
- *
- * @param { string } url 子应用地址
- * @param { string } appName 子应用名，全局唯一
- * @returns Promise
- */
-function loadApp(url, appName) {
-    return async () => {
-        await runScript(url + '/js/app.js')
-        return window[appName]
-    }
-}
-
-const app1 = {
-    name: 'app1',
-    app: loadApp('http://localhost:3000', 'app1'),
-    activeWhen: location => location.pathname.startsWith('/app1'),
-    customProps: {},
-}
-
-const app = createApp({
-    created() {
-        registerApplication(app1)
-    },
-    mounted() {
-        start()
-    },
+const options: {
+    el?: string
+    render: () => {}
+} = {
+    el: '#child-vue-app',
     render: () => h(App),
+}
+
+// 支持应用独立运行和部署
+if (!window.singleSpaNavigate) {
+    delete options.el
+
+    const app = createApp(App)
+
+    // 全局异常处理器
+    app.config.errorHandler = (err, vm, info) => {
+        console.log('[全局异常]', err, vm, info)
+    }
+
+    app.use(createPinia())
+    app.use(router)
+
+    app.mount('#app')
+}
+
+const vueLifecycles = singleSpaVue({
+    createApp,
+    appOptions: options,
+    handleInstance(app) {
+        app.use(createPinia())
+        app.use(router)
+    },
 })
 
-// 全局异常处理器
-app.config.errorHandler = (err, vm, info) => {
-    console.log('[全局异常]', err, vm, info)
-}
+export const bootstrap = vueLifecycles.bootstrap // 启动时
+export const mount = vueLifecycles.mount // 挂载时
+export const unmount = vueLifecycles.unmount // 卸载时
 
-app.use(createPinia())
-app.use(router)
-
-app.mount('#app')
+export default vueLifecycles

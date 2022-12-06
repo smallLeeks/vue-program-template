@@ -1,6 +1,5 @@
 {
     "extends": "@vue/tsconfig/tsconfig.web.json",
-    "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
     "module": "esnext",
     "target": "esnext",
     "esModuleInterop": true,
@@ -17,5 +16,6 @@
         {
             "path": "./tsconfig.config.json"
         }
-    ]
+    ],
+    "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "build/**/*.ts"]
 }

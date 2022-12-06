@@ -1,6 +1,6 @@
 <template>
     <div qys-font="bold" qys-text="brand" class="border border-error" @click="handleOpenModal">
-        attribute mode
+        这是子应用1
     </div>
     <VModal :is-open="isOpen" @close="handleCloseModal">
         <div class="flex items-center justify-center">
