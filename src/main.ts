@@ -42,14 +42,7 @@ export async function mount(props: any) {
         render()
     }
     console.log('此时的appdom是什么呢', appDom)
-    appDom.mount(
-        props.container ? props.container.querySelector('#child-site_app') : '#child-site_app',
-    )
-}
-
-if (!isQiankun) {
-    render()
-    appDom.mount('#child-app')
+    appDom.mount(props.container ? props.container.querySelector('#child-app') : '#child-app')
 }
 
 /**
@@ -62,4 +55,9 @@ export async function unmount(props: any) {
     }
     appDom.unmount()
     appDom = null
+}
+
+if (!isQiankun) {
+    render()
+    appDom.mount('#child-app')
 }

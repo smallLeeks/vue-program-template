@@ -19,6 +19,7 @@ import { OUTPUT_DIR } from './build/constant'
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
     return {
+        base: './',
         root: '.',
         plugins: [
             vue({

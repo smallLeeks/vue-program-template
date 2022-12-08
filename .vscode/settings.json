@@ -91,5 +91,6 @@
     "scss.lint.unknownAtRules": "ignore",
     "[yaml]": {
         "editor.defaultFormatter": "redhat.vscode-yaml"
-    }
+    },
+    "liveServer.settings.port": 5501
 }
