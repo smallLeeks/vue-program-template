@@ -8,6 +8,9 @@
     "editor.formatOnSave": true,
     // 默认格式化工具选择prettier
     "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[vue]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
     "editor.tabSize": 4,
     "git.autofetch": "all",
     "git.untrackedChanges": "separate",
