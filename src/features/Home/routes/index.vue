@@ -1,5 +1,5 @@
 <template>
-    <div qys-font="bold" qys-text="primary" class="border border-error" @click="handlePinia">
+    <div qys-font="bold" qys-text="primary" class="shadow-card rounded" @click="handlePinia">
         pinia {{ counter }}
     </div>
 </template>

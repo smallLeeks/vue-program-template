@@ -4,6 +4,7 @@ import presetRemToPx from '@unocss/preset-rem-to-px'
 export default defineConfig({
     shortcuts: {},
     theme: {
+        screens: {},
         colors: {
             // 品牌色
             primary1: '#e8f5ff',
@@ -30,7 +31,7 @@ export default defineConfig({
             success1: '#e8ffeb',
             success2: '#baf0c3',
             success3: '#90e1a0',
-            uccess4: '#1c9946',
+            success4: '#1c9946',
             success5: '#49c269',
             success6: '#2bb353',
             // 其他系统颜色 - 氰基蓝 Cyanyl blue
@@ -64,6 +65,31 @@ export default defineConfig({
             // 文字 - 强调/正文标题
             gray8: '#001330',
         },
+        fontFamily: {},
+        borderRadius: {
+            none: '0',
+            sm: '2px',
+            DEFAULT: '4px',
+            large: '8px',
+            full: '50%',
+        },
+        boxShadow: {
+            // 适用场景：白底卡片
+            card: '0px 0px 8px rgba(0, 19, 48, 0.08)',
+            // 适用场景：右侧抽屉
+            right: '-2px 0px 12px rgba(0, 19, 48, 0.08)',
+            // 适用场景：用于顶部菜单栏及工具栏
+            top: '0px 2px 4px rgba(0, 19, 48, 0.06)',
+            // 适用场景：下拉菜单
+            down: '0px 2px 8px rgba(0, 19, 48, 0.12)',
+            // 适用场景：表格右侧浮层
+            table: '-2px 0px 8px rgba(0, 19, 48, 0.08)',
+            // 适用场景：气泡卡片
+            popConfirm: '0px 4px 20px rgba(0, 19, 48, 0.12)',
+            // 适用场景：弹窗对话框
+            modal: '0px 2px 16px rgba(0, 19, 48, 0.12)',
+        },
+        extend: {},
     },
     presets: [
         presetUno(),
