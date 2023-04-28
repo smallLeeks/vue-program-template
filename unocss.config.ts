@@ -1,5 +1,5 @@
-import { defineConfig, presetAttributify, presetUno, presetTagify } from 'unocss'
-import presetRemToPx from '@unocss/preset-rem-to-px'
+import { defineConfig, presetAttributify, presetUno, presetTagify } from 'unocss';
+import presetRemToPx from '@unocss/preset-rem-to-px';
 
 export default defineConfig({
     shortcuts: {},
@@ -102,4 +102,4 @@ export default defineConfig({
             prefix: 'qys-',
         }),
     ],
-})
+});

@@ -1,9 +1,9 @@
-import type { VNode, PropType } from 'vue'
+import type { VNode, PropType } from 'vue';
 // import type { VueTypeValidableDef, VueTypeDef } from 'vue-types'
 
-declare type VNodeChildAtom = VNode | string | number | boolean | null | undefined | void
+declare type VNodeChildAtom = VNode | string | number | boolean | null | undefined | void;
 
-export type VueNode = VNodeChildAtom | VNodeChildAtom[] | JSX.Element
+export type VueNode = VNodeChildAtom | VNodeChildAtom[] | JSX.Element;
 
 // const initDefaultProps = <T>(
 //     types: T,

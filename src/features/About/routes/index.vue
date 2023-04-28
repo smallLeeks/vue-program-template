@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts">
-import { createMachine } from 'xstate'
+import { createMachine } from 'xstate';
 
 const toggleMachine = createMachine({
     id: 'toggle',
@@ -18,15 +18,15 @@ const toggleMachine = createMachine({
             on: { TOGGLE: 'inactive' },
         },
     },
-})
+});
 
 export default {
     setup() {
-        const { state, send } = useMachine(toggleMachine)
+        const { state, send } = useMachine(toggleMachine);
         return {
             state,
             send,
-        }
+        };
     },
-}
+};
 </script>

@@ -1,6 +1,6 @@
 module.exports = {
     // 忽略部分
-    ignores: [commit => commit.includes('init')],
+    ignores: [(commit) => commit.includes('init')],
     // 继承的规则
     extends: ['@commitlint/config-conventional'],
     // 定义规则类型
@@ -33,4 +33,4 @@ module.exports = {
             ],
         ],
     },
-}
+};

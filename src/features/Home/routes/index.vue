@@ -1,19 +1,17 @@
 <template>
-    <div qys-font="bold" qys-text="primary" class="shadow-card rounded" @click="handlePinia">
-        pinia {{ counter }}
-    </div>
+    <div qys-font="bold" qys-text="primary" class="shadow-card rounded" @click="handlePinia">pinia {{ counter }}</div>
 </template>
 
 <script lang="ts" setup>
-import { useCounterStore } from '@/stores/index'
+import { useCounterStore } from '@/stores/index';
 
-const store = useCounterStore()
+const store = useCounterStore();
 
-const counter = storeToRefs(store)
+const counter = storeToRefs(store);
 
 const handlePinia = () => {
-    store.increment()
-}
+    store.increment();
+};
 </script>
 
 <style lang="scss" scoped>
